@@ -1,0 +1,21 @@
+(define-module beginners.381
+  (export abc381a))
+(select-module beginners.381)
+
+(define (november-twentytwo? date)
+  (define half-pos (quotient (string-length date) 2))
+  (define (ones? left-half)
+    (string=? left-half (make-string (string-length left-half) #\1)))
+  (define (twos? right-half)
+    (string=? right-half (make-string (string-length right-half) #\2)))
+  (and (odd? (string-length date))
+       (char=? #\/ (string-ref date half-pos))
+       (ones? (string-copy date 0 half-pos))
+       (twos? (string-copy date (+ half-pos 1)))))
+
+(define (abc381a)
+  (let* ((n (string->number (read-line)))
+         (date (read-line)))
+    (if (november-twentytwo? date)
+        (print "Yes")
+        (print "No"))))
