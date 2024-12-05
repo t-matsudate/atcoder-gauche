@@ -1,5 +1,6 @@
 (define-module beginners.382
-  (export abc382a))
+  (export abc382a
+          abc382b))
 (select-module beginners.382)
 (use gauche.collection)
 
