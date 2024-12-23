@@ -1,3 +1,3 @@
 (add-load-path "." :relative)
-(use beginners.381)
-(require "tests/beginners/381")
+(use beginners.380)
+(require "tests/beginners/380")
