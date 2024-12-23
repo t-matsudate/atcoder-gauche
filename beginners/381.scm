@@ -1,5 +1,6 @@
 (define-module beginners.381
-  (export abc381a))
+  (export abc381a
+          abc381b))
 (select-module beginners.381)
 
 (define (november-twentytwo? date)
@@ -17,5 +18,26 @@
   (let* ((n (string->number (read-line)))
          (date (read-line)))
     (if (november-twentytwo? date)
+        (print "Yes")
+        (print "No"))))
+
+(define (twins? line)
+  (define middle (quotient (string-length line) 2))
+  (define (twin? i)
+    (cond ((>= i middle) #t)
+          ((not (char=? (string-ref line (* 2 i)) (string-ref line (+ (* 2 i) 1)))) #f)
+          (else (twin? (+ i 1)))))
+  (define (count-char-frequencies items)
+    (if (null? items)
+        '()
+        (cons (length (filter (lambda (item) (char=? item (car items))) items))
+              (count-char-frequencies (remove (lambda (item) (char=? item (car items))) items)))))
+  (and (even? (string-length line))
+       (twin? 0)
+       (every (lambda (frequency) (= 2 frequency)) (count-char-frequencies (string->list line)))))
+
+(define (abc381b)
+  (let ((line (read-line)))
+    (if (twins? line)
         (print "Yes")
         (print "No"))))
