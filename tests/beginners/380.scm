@@ -7,3 +7,9 @@
 (test* "323132" #t (one-two-three? "323132"))
 (test* "500000" #f (one-two-three? "500000"))
 (test-end)
+
+(test-start "ABC380B")
+(test* "|---|-|----|-|-----|" '(3 1 4 1 5) (count-hyphens "|---|-|----|-|-----|"))
+(test* "|----------|" '(10) (count-hyphens "|----------|"))
+(test* "|-|-|-|------|" '(1 1 1 6) (count-hyphens "|-|-|-|------|"))
+(test-end)
