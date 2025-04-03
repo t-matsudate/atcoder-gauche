@@ -1,0 +1,3 @@
+(define-module beginenrs.399a
+  (export hamming-distance))
+(select-module beginenrs.399a)

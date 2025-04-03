@@ -1,0 +1,3 @@
+(define-module tests.beginners.399a
+  (export abc399a))
+(select-module tests.beginners.399a)
