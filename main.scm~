@@ -1,5 +1,0 @@
-(add-load-path ".")
-(use beginners.399)
-(require "tests/beginners/399")
-
-(abc399a)
