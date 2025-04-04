@@ -1,4 +1,4 @@
 (add-load-path ".")
-(use beginners.399a)
-(require "tests/beginners/399a")
+(use beginners.399b)
+(require "tests/beginners/399b")
 
