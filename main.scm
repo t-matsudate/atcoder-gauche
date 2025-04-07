@@ -1,3 +1,3 @@
 (add-load-path ".")
-(use beginners.400a)
-(require "tests/beginners/400a")
+(use beginners.400b)
+(require "tests/beginners/400b")
